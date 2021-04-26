@@ -1,0 +1,15 @@
+<div class = "container" style = 'margin-top: 80px;'>
+<div class = 'row'>
+    <% @articles.each do |article| %> 
+      <div class="card border-light mb-3 shadow col-sm" style="max-width: 18rem; margin-right: 50px;">
+        <div class="card-header"><em>Written by:</em> <%= article.user.first_name.capitalize %></div>
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <p class="card-text"><%= article.subtitle %></p>
+          <%= link_to 'Read', article_path(article), class: 'btn btn-dark' %>
+        </div>
+      </div> 
+    <% end %>
+    </div>
+</div>
+

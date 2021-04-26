@@ -1,0 +1,19 @@
+<div class = "container">
+<%= form_with model: @article do |f| %>
+    <div class="mb-3">
+        <%= f.collection_select( :user_id, User.all, :id, :first_name, {prompt: 'Select a User'}, {class: 'btn btn-secondary dropdown-toggle'} ) %>
+    </div>
+    <div class="mb-3">
+        <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+    </div>
+    <div class="mb-3">
+        <%= f.text_field :subtitle, class: 'form-control', placeholder: 'Subtitle' %><br/>
+    </div>
+    <div class="mb-3">
+        <%= f.text_area :content, class: 'form-control', rows: '10', placeholder: 'Write your story' %><br/>
+    </div>
+    <div class="mb-3">
+        <%= f.submit 'Publish', class: 'btn btn-outline-dark' %>
+    </div>
+<% end %>
+</div>

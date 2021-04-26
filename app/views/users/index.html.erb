@@ -1,0 +1,14 @@
+<h1>Listing all users</h1>
+<div class = "container" style = 'margin-top: 80px;'>
+<div class = 'row'>
+<% @users.each do |user| %>
+<div class="card shadow col-sm mb-3" style="max-width: 18rem; margin-right: 50px;">
+  <%= image_tag 'boy.jpg' %>
+  <div class="card-body">
+    <h5 class="card-title"><%= user.first_name %> <%= user.last_name %></h5>
+    <%= link_to 'View Profile', user_path(user), class: 'btn btn-primary' %>
+  </div>
+</div>
+<% end %>
+</div>
+</div>
