@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :bloggers
   root to: 'articles#index'
-  resources :articles, except: :index
+  resources :articles
   # get 'articles', to: 'articles#index', as: 'articles'
   # get 'articles/new', to: 'articles#new', as: 'new_article'
   # get 'articles/:id/edit', to: 'articles#edit', as: 'edit_article'

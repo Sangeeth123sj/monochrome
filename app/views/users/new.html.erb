@@ -1,6 +1,5 @@
 <h1>Sign Up</h1>
 
-<div class = "container">
 <%= form_with model: @user do |f| %>
     <div class="mb-3">
         <%= f.text_field :first_name, class: 'form-control', placeholder: 'First Name' %>
@@ -18,4 +17,3 @@
         <%= f.submit 'Sign Up', class: 'btn btn-outline-dark' %>
     </div>
 <% end %>
-</div>

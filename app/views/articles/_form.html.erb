@@ -1,7 +1,6 @@
-<div class = "container">
 <%= form_with model: @article do |f| %>
     <div class="mb-3">
-        <%= f.collection_select( :user_id, User.all, :id, :first_name, {prompt: 'Select a User'}, {class: 'btn btn-secondary dropdown-toggle'} ) %>
+        <%= f.hidden_field :user_id, value: current_blogger.id %>
     </div>
     <div class="mb-3">
         <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
@@ -16,4 +15,3 @@
         <%= f.submit 'Publish', class: 'btn btn-outline-dark' %>
     </div>
 <% end %>
-</div>

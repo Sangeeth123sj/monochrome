@@ -20,6 +20,10 @@
      box-sizing: border-box;
  }
 
+ .center{
+   margin: auto;
+ }
+
  .shadow {
     -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
     -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
@@ -56,6 +60,21 @@
 }
 
 .navbar-nav{
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: 700;
     font-size: 20px;
+}
+
+.alert{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  color: red;
+
+}
+
+.errors, .notice{
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  color: red;
 }

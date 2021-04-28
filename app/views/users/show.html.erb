@@ -1,33 +1,32 @@
-<div class = "container">
-    <h1 style = "font-family: 'Zilla Slab Highlight', cursive;">User Profile</h1>
-    <div class="card text-white bg-dark mb-3" style="max-width: 30rem; height: 25rem;">
-    <div class="card-header profile-name"><tt><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></tt></div>
-    <div class="card-body">
-    <h5 class="card-title">E-mail: <tt><em><%= @user.email %></em></tt></h5>
-    <h5 class="card-title">Mobile: <tt><em><%= @user.mobile %></em></tt></h5>
-    </div>
-    </div>
 
-    <div class="table-responsive">
-            <table class="table table-success table-striped">
-                <thead>
-                    <tr>
-                      <th scope="col">Article</th>
-                      <th scope="col">Subtitle</th>
-                      <th scope="col">Action</th>
-                      <th scope="col">Created At</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                  <% @user.articles.each do |article| %>
-                    <tr>
-                      <th scope="row"><%= article.title %></th>
-                      <td><%= article.subtitle %></td>
-                      <td><%= link_to 'Read', article_path(article), class:'btn btn-outline-dark'%></td>
-                      <td><%= article.created_at %></td>
-                    </tr>
-                  <% end %>
-                  </tbody>
-            </table>
-    </div>
+<h1 style = "font-family: 'Zilla Slab Highlight', cursive;">User Profile</h1>
+<div class="card text-white bg-dark mb-3" style="max-width: 30rem; height: 25rem;">
+<div class="card-header profile-name"><tt><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></tt></div>
+<div class="card-body">
+<h5 class="card-title">E-mail: <tt><em><%= @user.email %></em></tt></h5>
+<h5 class="card-title">Mobile: <tt><em><%= @user.mobile %></em></tt></h5>
+</div>
+</div>
+
+<div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th scope="col">Article</th>
+                  <th scope="col">Subtitle</th>
+                  <th scope="col">Action</th>
+                  <th scope="col">Written on</th>
+                </tr>
+              </thead>
+              <tbody>
+              <% @user.articles.each do |article| %>
+                <tr>
+                  <th scope="row"><%= article.title %></th>
+                  <td><%= article.subtitle %></td>
+                  <td><%= link_to 'Read', article_path(article), class:'btn btn-outline-dark'%></td>
+                  <td><%= article.created_at %></td>
+                </tr>
+              <% end %>
+              </tbody>
+        </table>
 </div>
